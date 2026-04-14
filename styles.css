@@ -1,0 +1,811 @@
+/* ==================== Global Styles ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Garamond', serif;
+    line-height: 1.6;
+    color: #2b2520;
+    background-color: #faf8f3;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== Navigation ==================== */
+.navbar {
+    background: linear-gradient(135deg, #3d2817 0%, #5c3d2e 100%);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #f4d4a8;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #faf8f3;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #f4d4a8;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #f4d4a8;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+    background: linear-gradient(135deg, #3d2817 0%, #5c3d2e 100%);
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: 
+        linear-gradient(135deg, rgba(61, 40, 23, 0.85) 0%, rgba(92, 61, 46, 0.85) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="musical-notes" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><text x="50" y="50" font-size="40" fill="rgba(244,212,168,0.08)" text-anchor="middle">♪</text></pattern></defs><rect width="1200" height="600" fill="url(%23musical-notes)"/></svg>');
+    background-attachment: fixed;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: slideDown 0.8s ease;
+    color: #faf8f3;
+}
+
+.hero-content > p:nth-of-type(1) {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #f4d4a8;
+    animation: slideUp 0.8s ease 0.2s backwards;
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    color: #e8d9c3;
+    margin-bottom: 2rem;
+    animation: slideUp 0.8s ease 0.4s backwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-button {
+    background-color: #f4d4a8;
+    color: #3d2817;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(244, 212, 168, 0.4);
+    animation: slideUp 0.8s ease 0.6s backwards;
+}
+
+.cta-button:hover {
+    background-color: #fde8c8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(244, 212, 168, 0.5);
+}
+
+/* ==================== About Section ==================== */
+.about {
+    padding: 80px 20px;
+    background-color: #faf8f3;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #3d2817;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.about h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #8b5a3c;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5c4033;
+}
+
+.about-text strong {
+    color: #8b5a3c;
+}
+
+.episode-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background-color: #f0e8dd;
+    padding: 1.5rem;
+    border-left: 4px solid #8b5a3c;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 10px rgba(139, 90, 60, 0.15);
+}
+
+.info-card h3 {
+    color: #3d2817;
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    color: #6d4c41;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================== Gallery Section ==================== */
+.gallery {
+    padding: 80px 20px;
+    background-color: #f0e8dd;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #3d2817;
+}
+
+.gallery-subtitle {
+    text-align: center;
+    color: #6d4c41;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-btn {
+    background-color: #8b5a3c;
+    color: #faf8f3;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.gallery-btn:hover {
+    background-color: #a67c52;
+    transform: scale(1.05);
+}
+
+.slideshow-container {
+    position: relative;
+    background-color: #3d2817;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 8px 30px rgba(61, 40, 23, 0.4);
+}
+
+.slide {
+    display: none;
+    position: relative;
+    width: 100%;
+    animation: fadeEffect 0.5s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 600px;
+}
+
+.slide.fade {
+    display: none;
+}
+
+.slide.fade.active {
+    display: block;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(61, 40, 23, 0.95), transparent);
+    color: #faf8f3;
+    padding: 2rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.dots-container {
+    text-align: center;
+    padding: 1rem;
+    background-color: #3d2817;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #8b5a3c;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #f4d4a8;
+}
+
+/* ==================== Featured Poetry Section ==================== */
+.featured-poetry {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f0e8dd 0%, #faf8f3 100%);
+}
+
+.featured-poetry h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #3d2817;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.featured-poetry h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #8b5a3c;
+}
+
+.poetry-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #faf8f3;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(139, 90, 60, 0.15);
+}
+
+.poetry-quote {
+    font-size: 1.3rem;
+    color: #3d2817;
+    margin-bottom: 1.5rem;
+    line-height: 2;
+    padding: 1.5rem;
+    background-color: #f0e8dd;
+    border-left: 4px solid #8b5a3c;
+    border-radius: 5px;
+}
+
+.poetry-analysis {
+    color: #5c4033;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* ==================== Themes Section ==================== */
+.themes {
+    padding: 80px 20px;
+    background-color: #faf8f3;
+}
+
+.themes h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #3d2817;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.themes h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #8b5a3c;
+}
+
+.themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.theme-card {
+    background-color: #f0e8dd;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-top: 4px solid #8b5a3c;
+}
+
+.theme-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(139, 90, 60, 0.15);
+}
+
+.theme-card h3 {
+    font-size: 1.3rem;
+    color: #3d2817;
+    margin-bottom: 1rem;
+}
+
+.theme-card p {
+    color: #6d4c41;
+    line-height: 1.7;
+}
+
+/* ==================== Podcast Section ==================== */
+.podcast {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #3d2817 0%, #5c3d2e 100%);
+    color: white;
+}
+
+.podcast h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #faf8f3;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.podcast h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #f4d4a8;
+}
+
+.podcast-player {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.08);
+    padding: 2.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(244, 212, 168, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.player-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #f4d4a8;
+}
+
+.player-info p {
+    color: #e8d9c3;
+    margin-bottom: 1.5rem;
+}
+
+audio {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    outline: none;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.player-controls {
+    text-align: center;
+    color: #e8d9c3;
+    font-size: 1.05rem;
+}
+
+/* ==================== Script Section ==================== */
+.script-section {
+    padding: 80px 20px;
+    background-color: #faf8f3;
+}
+
+.script-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #3d2817;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.script-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #8b5a3c;
+}
+
+.script-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.script-intro,
+.script-section-content,
+.script-conclusion {
+    background-color: #f0e8dd;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid #8b5a3c;
+}
+
+.script-intro h3,
+.script-section-content h3,
+.script-conclusion h3 {
+    font-size: 1.5rem;
+    color: #3d2817;
+    margin-bottom: 1.5rem;
+}
+
+.script-intro p,
+.script-section-content p,
+.script-conclusion p {
+    color: #5c4033;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.script-section-divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #8b5a3c, transparent);
+    margin: 2.5rem 0;
+}
+
+.poetry-block {
+    background-color: #faf8f3;
+    padding: 1.5rem;
+    border-left: 4px solid #8b5a3c;
+    margin: 1.5rem 0;
+    border-radius: 5px;
+}
+
+.poetry-block p {
+    color: #3d2817;
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+/* ==================== Team Section ==================== */
+.team {
+    padding: 80px 20px;
+    background-color: #f0e8dd;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #3d2817;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.team h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #8b5a3c;
+}
+
+.team-subtitle {
+    text-align: center;
+    color: #6d4c41;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.team-member {
+    background-color: #faf8f3;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid #8b5a3c;
+    box-shadow: 0 2px 10px rgba(139, 90, 60, 0.1);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(139, 90, 60, 0.15);
+}
+
+.member-avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #8b5a3c 0%, #6d4c41 100%);
+    color: #faf8f3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+    box-shadow: 0 4px 15px rgba(139, 90, 60, 0.3);
+}
+
+.team-member h3 {
+    font-size: 1.4rem;
+    color: #3d2817;
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    color: #8b5a3c;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member-bio {
+    color: #6d4c41;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.team-description {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #faf8f3;
+    padding: 2.5rem;
+    border-radius: 10px;
+    border-left: 5px solid #8b5a3c;
+}
+
+.team-description p {
+    color: #5c4033;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* ==================== Footer ==================== */
+.footer {
+    background-color: #3d2817;
+    color: #e8d9c3;
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+.footer p:first-child {
+    font-weight: bold;
+    color: #f4d4a8;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content > p:nth-of-type(1) {
+        font-size: 1.3rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .about h2,
+    .gallery h2,
+    .featured-poetry h2,
+    .themes h2,
+    .podcast h2,
+    .script-section h2,
+    .team h2 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .themes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slide img {
+        max-height: 400px;
+    }
+
+    .caption {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .script-intro,
+    .script-section-content,
+    .script-conclusion {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content > p:nth-of-type(1) {
+        font-size: 1.1rem;
+    }
+
+    .nav-brand {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}

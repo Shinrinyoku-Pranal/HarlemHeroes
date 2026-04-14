@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harlem Heroes Podcast</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">🎙️ Harlem Heroes</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#podcast">Listen</a></li>
+                <li><a href="#script">Script</a></li>
+                <li><a href="#team">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Harlem Heroes</h1>
+            <p>Exploring Poetry, Music, and the Cultural Revolution</p>
+            <p class="subtitle">A Deep Dive into Langston Hughes, Jazz, and the Harlem Renaissance</p>
+            <button class="cta-button" onclick="document.getElementById('podcast').scrollIntoView({behavior: 'smooth'})">Listen Now</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About This Episode</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        <strong>Welcome to Harlem Heroes.</strong> This episode explores the Harlem Renaissance of the 1920s and 1930s, a transformative period in American history when Black artists, musicians, and writers gathered in Harlem to create powerful work that challenged stereotypes and celebrated the dignity of Black life in America. At the center of our discussion is Langston Hughes, a poet who fundamentally changed American literature by writing for everyday people rather than academic critics. Hughes took the rhythms of jazz and blues from street corners and nightclubs and wove them into his poetry, creating something entirely new and authentic.
+                    </p>
+                    <p>
+                        We examine how Hughes drew inspiration from jazz and blues, genres born from African American struggle and resilience, and used them as literary forms in his poetry. This episode traces the historical context that made Hughes possible, including the Great Migration that brought African Americans to Northern cities like New York. We also explore how Hughes's legacy continues today through modern music and poetry, including R&B and hip-hop, as contemporary artists continue to center Black voices and experiences in their work.
+                    </p>
+                </div>
+                <div class="episode-info">
+                    <div class="info-card">
+                        <h3>🎵 Focus</h3>
+                        <p>Jazz & Blues in Poetry</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>✍️ Featured Writer</h3>
+                        <p>Langston Hughes</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🏙️ Era</h3>
+                        <p>1920s-1930s Harlem</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🌍 Today</h3>
+                        <p>Hip-Hop, R&B, Spoken Word</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Visual Journey Through Harlem Heroes</h2>
+            <p class="gallery-subtitle">A collection of images celebrating Langston Hughes, jazz culture, and the Harlem Renaissance</p>
+            
+            <div class="gallery-controls">
+                <button class="gallery-btn" onclick="previousImage()">← Previous</button>
+                <button class="gallery-btn" onclick="nextImage()">Next →</button>
+            </div>
+
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="LH1.jpeg" alt="Harlem Renaissance Image 1">
+                    <div class="caption">The Harlem Renaissance - A cultural awakening</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="LH2.jpeg" alt="Harlem Renaissance Image 2">
+                    <div class="caption">Jazz and blues flourished in Harlem's vibrant nightlife</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="LH3" alt="Harlem Renaissance Image 3">
+                    <div class="caption">Langston Hughes and the literary voices of the era</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="LH4.jpg" alt="Harlem Renaissance Image 4">
+                    <div class="caption">The spirit of artistic innovation and expression</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="LH6.jpeg" alt="Harlem Renaissance Image 5">
+                    <div class="caption">Harlem streets alive with cultural transformation</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="LH7.jpeg" alt="Harlem Renaissance Image 6">
+                    <div class="caption">Musicians and performers shaped the sound of America</div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="lh8.jpeg" alt="Harlem Renaissance Image 7">
+                    <div class="caption">Black artists asserting dignity and humanity</div>
+                </div>
+
+                <!-- Dots for navigation -->
+                <div class="dots-container">
+                    <span class="dot" onclick="currentImage(1)"></span>
+                    <span class="dot" onclick="currentImage(2)"></span>
+                    <span class="dot" onclick="currentImage(3)"></span>
+                    <span class="dot" onclick="currentImage(4)"></span>
+                    <span class="dot" onclick="currentImage(5)"></span>
+                    <span class="dot" onclick="currentImage(6)"></span>
+                    <span class="dot" onclick="currentImage(7)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Poetry Section -->
+    <section class="featured-poetry">
+        <div class="container">
+            <h2>Featured: "The Weary Blues"</h2>
+            <div class="poetry-content">
+                <div class="poetry-text">
+                    <p class="poetry-quote">
+                        <em>Down on Lenox Avenue the other night<br>
+                        By the pale dull pallor of an old gas light<br>
+                        He did a lazy sway. . . .<br>
+                        He did a lazy sway. . . .<br>
+                        To the tune o' those Weary Blues.</em>
+                    </p>
+                    <p class="poetry-analysis">
+                        In this excerpt from Langston Hughes's "The Weary Blues," we can see how he brings jazz and blues 
+                        directly into his poetry. Notice the rhythm—it mimics blues lyrics. The repetition, the everyday language, 
+                        and the musical setting all work together to create a poem that doesn't just describe music, but actually 
+                        sounds like it.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Themes Section -->
+    <section class="themes">
+        <div class="container">
+            <h2>Episode Themes</h2>
+            <div class="themes-grid">
+                <div class="theme-card">
+                    <h3>🏙️ The Harlem Renaissance</h3>
+                    <p>A cultural explosion of the 1920s-1930s that reshaped American identity through art, music, and literature created by African Americans.</p>
+                </div>
+                <div class="theme-card">
+                    <h3>✍️ Langston Hughes</h3>
+                    <p>A revolutionary poet who brought everyday Black voices into the center of American literature, refusing to conform to traditional literary standards.</p>
+                </div>
+                <div class="theme-card">
+                    <h3>🎵 Jazz & Blues Influence</h3>
+                    <p>Musical genres that brought improvisation, rhythm, storytelling, and emotional depth—elements Hughes wove directly into his poetic form.</p>
+                </div>
+                <div class="theme-card">
+                    <h3>🌍 Global Legacy</h3>
+                    <p>Hughes's influence spread worldwide, inspiring South African writers and continuing through modern genres like R&B, spoken word, and hip-hop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Section -->
+    <section id="podcast" class="podcast">
+        <div class="container">
+            <h2>Listen to the Full Episode</h2>
+            <div class="podcast-player">
+                <div class="player-info">
+                    <h3>Harlem Heroes: Poetry & Music of the Renaissance</h3>
+                    <p>Episode exploring Langston Hughes, jazz, blues, and the cultural revolution</p>
+                </div>
+                <audio controls>
+                    <source src="Harlem Heroes Podcast.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="player-controls">
+                    <p>🎧 Listen to the full discussion about how poetry and music came together to redefine American art.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Script Section -->
+    <section id="script" class="script-section">
+        <div class="container">
+            <h2>Full Episode Script</h2>
+            <div class="script-content">
+                <div class="script-intro">
+                    <h3>Introduction</h3>
+                    <p>
+                        Hey everyone, welcome to Harlem Heroes. Today, we're diving into how poetry and music came together to completely 
+                        redefine what counted as art during the Harlem Renaissance. This wasn't just a moment in history, it was a cultural 
+                        explosion where Black artists, writers, and musicians reshaped American identity and demanded to be heard.
+                    </p>
+                    <p>
+                        At the center of today's episode is Langston Hughes, one of the most influential voices of the movement. Hughes 
+                        wasn't just writing poetry, he was transforming it. He took the sounds of jazz and blues, music that was deeply 
+                        rooted in Black experience, and wove those rhythms, tones, and emotional textures directly into his work in a way 
+                        that hadn't really been done before. His poetry didn't just describe life, it sounded like it.
+                    </p>
+                    <p>
+                        Throughout this episode, we'll explore what made the Harlem Renaissance such a powerful cultural moment, take a 
+                        closer look at Hughes's life and what shaped his voice, and break down how musical forms like jazz and blues influenced 
+                        the structure and feeling of his poetry. We'll also look at how Hughes centered everyday Black voices, workers, dreamers, 
+                        families, and elevated their stories into something worthy of art and attention.
+                    </p>
+                    <p>
+                        And finally, we'll connect it all to today. Because Hughes's influence didn't stop in the 1920s, his blending of 
+                        music and poetry still echoes in modern genres like R&B, spoken word, and hip-hop. So whether you're here for the history, 
+                        the literature, or the music, this episode is all about understanding how one writer helped change the sound, and the soul, 
+                        of American art.
+                    </p>
+                </div>
+
+                <div class="script-section-divider"></div>
+
+                <div class="script-section-content">
+                    <h3>Background</h3>
+                    <p>
+                        The Harlem Renaissance took place during the 1920s and 1930s, centered in Harlem, and it marked one of the most powerful 
+                        cultural transformations in American history. This wasn't just an artistic trend, it was a full-scale cultural explosion 
+                        of art, music, and literature created by African Americans who were redefining how Black identity was seen and expressed. 
+                        Writers, musicians, and visual artists came together in a shared moment of creativity, producing work that challenged 
+                        stereotypes and demanded recognition on their own terms.
+                    </p>
+                    <p>
+                        Historians like Cary Wintz connect this period to the idea of the "New Negro," a movement centered on racial pride, 
+                        self-definition, and cultural empowerment. The New Negro wasn't willing to accept the limited and often harmful portrayals 
+                        of Black life that had dominated American culture before. Instead, artists of the Harlem Renaissance used their work to 
+                        assert dignity, complexity, and humanity, creating space for authentic Black voices to be heard.
+                    </p>
+                    <p>
+                        Music played a huge role in shaping this movement. Jazz and blues weren't just popular styles, they were powerful symbols 
+                        of resistance, resilience, and Black identity. These genres emerged from lived experience, carrying the emotional weight 
+                        of struggle, joy, migration, and survival. Scholars like Yahya Johntaba argue that jazz and blues represented a kind of 
+                        independence for Black Americans, a way to create freely, outside of dominant cultural expectations.
+                    </p>
+                    <p>
+                        And this influence didn't stay confined to music. The rhythms, improvisation, and emotional depth of jazz especially began 
+                        to reshape how artists across disciplines thought about creativity itself. Writers experimented with flow and structure, 
+                        photographers captured candid, dynamic moments, and visual artists embraced bold, expressive styles. Jazz, in particular, 
+                        introduced the idea that art could be spontaneous, fluid, and deeply personal—changing not just what artists created, but 
+                        how they understood the act of creation itself.
+                    </p>
+                </div>
+
+                <div class="script-section-divider"></div>
+
+                <div class="script-section-content">
+                    <h3>Langston Hughes</h3>
+                    <p>
+                        Langston Hughes was one of the central figures of the Harlem Renaissance, and his impact on American literature is hard 
+                        to overstate. Born in Joplin, Massachusetts, Hughes's life was shaped by a wide range of experiences that would later 
+                        influence his writing. He didn't follow a single, straightforward path, he worked many different jobs over the years while 
+                        building a career as a poet, social activist, novelist, playwright, and columnist. This variety of experiences gave him a 
+                        deep understanding of everyday life, which became a defining feature of his work.
+                    </p>
+                    <p>
+                        Hughes also traveled internationally, spending time in places like Africa and Europe, where he connected with Black 
+                        communities across the globe. These experiences broadened his perspective and reinforced his commitment to representing 
+                        the diversity of Black life, not just in the United States but worldwide. His writing reflects this global awareness, 
+                        while still staying grounded in the realities of everyday people.
+                    </p>
+                    <p>
+                        According to organizations like the Academy of American Poets, Hughes became known for portraying Black life in America 
+                        in a real, unfiltered way. His work captured the full range of human experience, joy, struggle, humor, resilience, without 
+                        romanticizing or simplifying it. He wrote about ordinary people in ways that made their lives feel important and worthy of 
+                        attention, pushing back against narratives that had long ignored or misrepresented them.
+                    </p>
+                    <p>
+                        What really set Hughes apart from many writers of his time was his refusal to conform to traditional literary standards. 
+                        Instead of trying to imitate European styles or write in overly formal language, he embraced the rhythms of everyday speech. 
+                        The Poetry Foundation notes that Hughes focused especially on working-class Black voices, bringing their stories and language 
+                        into the center of his poetry. By doing this, he challenged the idea that art had to be polished or elite to be meaningful. 
+                        For Hughes, authenticity mattered more than convention, and that choice helped redefine what American literature could sound like.
+                    </p>
+                </div>
+
+                <div class="script-section-divider"></div>
+
+                <div class="script-section-content">
+                    <h3>Jazz and Blues Influence</h3>
+                    <p>
+                        Now let's talk about the core of our podcast: how jazz and blues shaped Langston Hughes's poetry. In the 1920s, jazz 
+                        wasn't just a new kind of music, it was a revolution in sound and structure. It broke away from rigid musical traditions 
+                        and introduced improvisation, syncopation, and unpredictable rhythms. As scholars like Kathy Ogren explain, jazz challenged 
+                        the idea that art had to follow strict rules, opening the door for more spontaneous and expressive forms of creativity.
+                    </p>
+                    <p>
+                        Hughes took these same ideas and translated them into poetry. Instead of relying on strict meter or traditional poetic 
+                        forms, many of his poems move with a kind of musical flow. Lines stretch or shorten unexpectedly, rhythms shift, and the 
+                        pacing feels almost like a jazz performance. Reading his work can feel like listening to a live band, there's a sense of 
+                        movement, energy, and improvisation that pulls you in. His poetry doesn't just describe music; it actually mimics the 
+                        experience of hearing it.
+                    </p>
+                    <p>
+                        Blues music, on the other hand, contributed a different but equally important layer. While jazz emphasized innovation 
+                        and rhythm, blues brought emotional depth and storytelling. It focused on themes like hardship, resilience, love, and 
+                        everyday working life. Hughes drew heavily from these themes, using them to ground his poetry in real human experience.
+                    </p>
+                    <p>
+                        He also borrowed structural elements from the blues, especially repetition and variation. Just like in blues lyrics, 
+                        certain lines or phrases in his poems repeat, building rhythm and emphasizing emotion. The tone often carries that same 
+                        mix of sorrow and strength that defines blues music. The result is poetry that doesn't just talk about life, it feels 
+                        like it, echoing both the sound and spirit of the music that inspired it.
+                    </p>
+                </div>
+
+                <div class="script-section-divider"></div>
+
+                <div class="script-section-content">
+                    <h3>Example Poetry Reading</h3>
+                    <p>
+                        Let's look at an example. This is from Hughes's poem "The Weary Blues."
+                    </p>
+                    <div class="poetry-block">
+                        <p>
+                            <em>Down on Lenox Avenue the other night<br>
+                            By the pale dull pallor of an old gas light<br>
+                            He did a lazy sway. . . .<br>
+                            He did a lazy sway. . . .<br>
+                            To the tune o' those Weary Blues.</em>
+                        </p>
+                    </div>
+                    <p>
+                        Right away, you can hear the rhythm. The repetition mimics a blues song, it almost feels like lyrics, and the imagery 
+                        places us in a musical setting. Hughes is recreating music through literature. This reflects what scholars describe as 
+                        cross-disciplinary influence, where music directly shapes literary form. If you notice closely, the lyrics of the poem 
+                        did not use a refined or formal tone. That's intentional. Hughes wanted his poetry to reflect everyday Black experiences, 
+                        not idealized or filtered versions.
+                    </p>
+                    <p>
+                        At the time, this approach was actually controversial. Many critics believed that serious literature had to follow strict 
+                        rules that included the use of formal language, structured rhythm, and certain themes. By using jazz and blues, he challenged 
+                        the idea that only European-inspired forms could define literature. This idea aligned with ideas throughout Harlem where 
+                        debates about identity and representation were on the rise.
+                    </p>
+                </div>
+
+                <div class="script-section-divider"></div>
+
+                <div class="script-section-content">
+                    <h3>Cultural and Global Impact</h3>
+                    <p>
+                        Hughes's influence didn't stop in the U.S. According to Literary Hub, his work influenced South African writers, especially 
+                        through collaborations and literary exchanges. His emphasis on authentic voice and lived experience resonated globally, 
+                        springing emotion to colonies around the globe that are dealing with colonialism and a racial identity.
+                    </p>
+                    <p>
+                        At the same time, jazz and blues continued evolving, eventually influencing genres like R&B. Modern R&B still uses many of 
+                        the same elements rhythm, repetition, emotional storytelling that Hughes brought into poetry.
+                    </p>
+                </div>
+
+                <div class="script-section-divider"></div>
+
+                <div class="script-conclusion">
+                    <h3>Conclusion</h3>
+                    <p>
+                        Let's wrap up today's podcast with this: Langston Hughes reshaped American poetry by blending elements of jazz and blues 
+                        with literature. By challenging traditional definitions of art, he brought to fame daily black experiences and created a 
+                        new literary style that was steeped in culture. And his influence continues today, in many forms, not just poetry but 
+                        through music genres like R&B and more. Thank you Langston Hughes for revolutionizing art for everyone, and thank y'all 
+                        for listening.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creators Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Meet the Creators</h2>
+            <p class="team-subtitle">The voices and minds behind Harlem Heroes</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">PCS</div>
+                    <h3>Pranal Siripurapu</h3>
+                    <p class="member-role">Script Writer & Website Builder</p>
+                    
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">ES</div>
+                    <h3>Emilia Striegel</h3>
+                    <p class="member-role">Script Editor & Speaker</p>
+                    
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">EB</div>
+                    <h3>Emma Buffington</h3>
+                    <p class="member-role">Script Editor & Speaker</p>
+                    
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Harlem Heroes Podcast. Celebrating poetry, music, and cultural legacy.</p>
+            <p>A tribute to Langston Hughes and the artists of the Harlem Renaissance.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
