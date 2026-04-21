@@ -75,10 +75,11 @@
             
             <div class="gallery-controls">
                 <button class="gallery-btn" onclick="previousImage()">← Previous</button>
+                <button class="gallery-btn fullscreen-btn" onclick="toggleFullscreen()" title="Toggle Fullscreen">⛶ Fullscreen</button>
                 <button class="gallery-btn" onclick="nextImage()">Next →</button>
             </div>
 
-            <div class="slideshow-container">
+            <div class="slideshow-container" id="slideshowContainer">
                 <div class="slide fade">
                     <img src="LH1.jpeg" alt="Harlem Renaissance Image 1">
                     <div class="caption">The Harlem Renaissance - A cultural awakening</div>
@@ -152,30 +153,6 @@
         </div>
     </section>
 
-    <!-- Key Themes Section -->
-    <section class="themes">
-        <div class="container">
-            <h2>Episode Themes</h2>
-            <div class="themes-grid">
-                <div class="theme-card">
-                    <h3>🏙️ The Harlem Renaissance</h3>
-                    <p>A cultural explosion of the 1920s-1930s that reshaped American identity through art, music, and literature created by African Americans.</p>
-                </div>
-                <div class="theme-card">
-                    <h3>✍️ Langston Hughes</h3>
-                    <p>A revolutionary poet who brought everyday Black voices into the center of American literature, refusing to conform to traditional literary standards.</p>
-                </div>
-                <div class="theme-card">
-                    <h3>🎵 Jazz & Blues Influence</h3>
-                    <p>Musical genres that brought improvisation, rhythm, storytelling, and emotional depth—elements Hughes wove directly into his poetic form.</p>
-                </div>
-                <div class="theme-card">
-                    <h3>🌍 Global Legacy</h3>
-                    <p>Hughes's influence spread worldwide, inspiring South African writers and continuing through modern genres like R&B, spoken word, and hip-hop.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Podcast Section -->
     <section id="podcast" class="podcast">
@@ -415,6 +392,20 @@
             </div>
 
             
+        </div>
+    </section>
+
+    <!-- QR Code Section -->
+    <section class="qr-code-section">
+        <div class="container">
+            <h2>Share This Podcast</h2>
+            <div class="qr-code-container">
+                <div class="qr-code-box">
+                    <p class="qr-description">Scan the QR code to listen to Harlem Heroes</p>
+                    <img src="qrcode (7).png" alt="QR Code to Harlem Heroes Podcast" class="qr-code-image">
+                    <p class="qr-text">Scan with your phone to share</p>
+                </div>
+            </div>
         </div>
     </section>
 

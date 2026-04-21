@@ -279,6 +279,15 @@ body {
     transform: scale(1.05);
 }
 
+.fullscreen-btn {
+    background-color: #6d4c41;
+    font-size: 0.9rem;
+}
+
+.fullscreen-btn:hover {
+    background-color: #8b5a3c;
+}
+
 .slideshow-container {
     position: relative;
     background-color: #3d2817;
@@ -287,6 +296,36 @@ body {
     max-width: 900px;
     margin: 0 auto;
     box-shadow: 0 8px 30px rgba(61, 40, 23, 0.4);
+    transition: all 0.3s ease;
+}
+
+.slideshow-container.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+    z-index: 1000;
+    margin: 0;
+    box-shadow: none;
+}
+
+.slideshow-container.fullscreen .slide img {
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gallery-controls.fullscreen-active {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    gap: 0.5rem;
 }
 
 .slide {
@@ -712,6 +751,78 @@ audio::-webkit-media-controls-panel {
     font-size: 1.05rem;
 }
 
+/* ==================== QR Code Section ==================== */
+.qr-code-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f0e8dd 0%, #faf8f3 100%);
+}
+
+.qr-code-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #3d2817;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.qr-code-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #8b5a3c;
+}
+
+.qr-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-code-box {
+    background-color: #faf8f3;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(139, 90, 60, 0.15);
+    text-align: center;
+    border: 3px solid #8b5a3c;
+    transition: all 0.3s ease;
+    max-width: 400px;
+}
+
+.qr-code-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(139, 90, 60, 0.25);
+}
+
+.qr-description {
+    font-size: 1.1rem;
+    color: #3d2817;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.qr-code-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+    border: 2px solid #f4d4a8;
+}
+
+.qr-text {
+    font-size: 0.95rem;
+    color: #6d4c41;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
 /* ==================== Footer ==================== */
 .footer {
     background-color: #3d2817;
@@ -754,7 +865,8 @@ audio::-webkit-media-controls-panel {
     .themes h2,
     .podcast h2,
     .script-section h2,
-    .team h2 {
+    .team h2,
+    .qr-code-section h2 {
         font-size: 2rem;
     }
 
@@ -768,6 +880,15 @@ audio::-webkit-media-controls-panel {
 
     .team-grid {
         grid-template-columns: 1fr;
+    }
+
+    .qr-code-box {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .qr-code-image {
+        max-width: 250px;
     }
 
     .slide img {

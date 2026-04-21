@@ -178,6 +178,38 @@ initThemeSwitcher();
 
 // ==================== Analytics/Engagement Tracking ====================
 
+// ==================== Fullscreen Gallery Functionality ====================
+
+function toggleFullscreen() {
+    const slideshowContainer = document.getElementById('slideshowContainer');
+    const galleryControls = document.querySelector('.gallery-controls');
+    const dots = document.querySelector('.dots');
+    
+    slideshowContainer.classList.toggle('fullscreen');
+    galleryControls.classList.toggle('fullscreen-active');
+    
+    if (dots) {
+        dots.style.display = slideshowContainer.classList.contains('fullscreen') ? 'none' : 'flex';
+    }
+    
+    // Handle body scroll when fullscreen is active
+    if (slideshowContainer.classList.contains('fullscreen')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Exit fullscreen on ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const slideshowContainer = document.getElementById('slideshowContainer');
+        if (slideshowContainer.classList.contains('fullscreen')) {
+            toggleFullscreen();
+        }
+    }
+});
+
 // Track gallery interactions
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('gallery-btn')) {
